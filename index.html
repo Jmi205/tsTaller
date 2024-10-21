@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV Series</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,28 +38,51 @@
         td a:hover {
             text-decoration: underline;
         }
+        #series-detail {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <h1><img src="https://www.wikimedia.org/static/images/wmf-logo.png" alt="TV Icon" width="50" height="50"> TV Series</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Channel</th>
-                <th>Seasons</th>
-            </tr>
-        </thead>
-        <tbody id="series-table-body">
-            <!-- Aquí se insertarán las filas con JavaScript -->
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row">
+            <!-- Tabla de series -->
+            <div class="col-md-8">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Channel</th>
+                            <th>Seasons</th>
+                        </tr>
+                    </thead>
+                    <tbody id="series-table-body">
+                        <!-- Aquí se insertarán las filas con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
 
-    <script type = "module" src="./scripts/dataSeries.js"></script>
-    <script type = "module" src="./scripts/Serie.js"></script>
+            <!-- Detalle de la serie -->
+            <div class="col-md-4">
+                <div id="series-detail" class="card" style="display: none;">
+                    <img id="series-image" class="card-img-top" alt="Series Image">
+                    <div class="card-body">
+                        <h5 id="series-name" class="card-title"></h5>
+                        <p id="series-description" class="card-text"></p>
+                        <a id="series-link" href="#" class="btn btn-primary" target="_blank">More info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/dataSeries.js"></script>
 
 </body>
 </html>
