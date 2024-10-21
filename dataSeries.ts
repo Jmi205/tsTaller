@@ -26,7 +26,7 @@ export function generateSeriesTable() {
 
             row.innerHTML = `
                 <td>${serie.id}</td>
-                <td><a href="${serie.link}">${serie.name}</a></td>
+                <td>${serie.name}</td>
                 <td>${serie.channel}</td>
                 <td>${serie.seasons}</td>
             `;
@@ -42,7 +42,7 @@ export function generateSeriesTable() {
     // Crear una fila para mostrar el promedio de temporadas
     const averageRow = document.createElement("tr");
     averageRow.innerHTML = `
-        <td colspan="4" style="text-align: center; font-weight: bold;">
+        <td colspan="4" style="text-align: left; font-weight: bold;">
             Seasons average: ${averageSeasons}
         </td>
     `;

@@ -14,7 +14,7 @@ export function generateSeriesTable() {
         // Insertar las filas de cada serie
         series.forEach(function (serie) {
             var row = document.createElement("tr");
-            row.innerHTML = "\n                <td>".concat(serie.id, "</td>\n                <td><a href=\"").concat(serie.link, "\">").concat(serie.name, "</a></td>\n                <td>").concat(serie.channel, "</td>\n                <td>").concat(serie.seasons, "</td>\n            ");
+            row.innerHTML = "\n                <td>".concat(serie.id, "</td>\n                <td>").concat(serie.name, "</td>\n                <td>").concat(serie.channel, "</td>\n                <td>").concat(serie.seasons, "</td>\n            ");
             tableBody.appendChild(row);
         });
     }
@@ -23,7 +23,7 @@ export function generateSeriesTable() {
     var averageSeasons = (totalSeasons / series.length).toFixed(1); // Redondeado a 1 decimal
     // Crear una fila para mostrar el promedio de temporadas
     var averageRow = document.createElement("tr");
-    averageRow.innerHTML = "\n        <td colspan=\"4\" style=\"text-align: center; font-weight: bold;\">\n            Seasons average: ".concat(averageSeasons, "\n        </td>\n    ");
+    averageRow.innerHTML = "\n        <td colspan=\"4\" style=\"text-align: left; font-weight: bold;\">\n            Seasons average: ".concat(averageSeasons, "\n        </td>\n    ");
     if (tableBody) {
         tableBody.appendChild(averageRow);
     }
