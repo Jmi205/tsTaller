@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            background-color: #00b4d8;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #00b4d8;
+            color: white;
+        }
+        td a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+        td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tv_icon_television_video.svg/768px-Tv_icon_television_video.svg.png" alt="TV Icon" width="30" height="30"> TV Series</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Seasons</th>
+            </tr>
+        </thead>
+        <tbody id="series-table-body">
+            <!-- Aquí se insertarán las filas con JavaScript -->
+        </tbody>
+    </table>
+
+    <script type = "module" src="./scripts/dataSeries.js"></script>
+    <script type = "module" src="./scripts/Serie.js"></script>
+
+</body>
+</html>
