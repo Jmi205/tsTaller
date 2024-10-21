@@ -16,10 +16,11 @@ export const series = [
              "https://www.bbc.co.uk/programmes/p065smy4", "https://i.imgur.com/D4y3DrQ.jpg")
 ];
 
-function generateSeriesTable() {
+export function generateSeriesTable() {
     const tableBody = document.getElementById("series-table-body");
 
     if (tableBody) {
+        // Insertar las filas de cada serie
         series.forEach(serie => {
             const row = document.createElement("tr");
 
@@ -32,8 +33,21 @@ function generateSeriesTable() {
 
             tableBody.appendChild(row);
         });
-    } else {
-        console.error("Table body element not found");
+    }
+
+    // Calcular el promedio de temporadas
+    const totalSeasons = series.reduce((sum, serie) => sum + serie.seasons, 0);
+    const averageSeasons = (totalSeasons / series.length).toFixed(1); // Redondeado a 1 decimal
+
+    // Crear una fila para mostrar el promedio de temporadas
+    const averageRow = document.createElement("tr");
+    averageRow.innerHTML = `
+        <td colspan="4" style="text-align: center; font-weight: bold;">
+            Seasons average: ${averageSeasons}
+        </td>
+    `;
+    if (tableBody) {
+        tableBody.appendChild(averageRow);
     }
 }
 
